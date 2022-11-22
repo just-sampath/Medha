@@ -1,0 +1,122 @@
+body {
+    background: #111111;
+    font-family: "lora-regular", serif;
+    font-size: 1.rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.765;
+    color: #757575;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## links
+ * ------------------------------------------------------------------- */
+a {
+    color: #0087cc;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover, a:focus, a:active {
+    color: #39b54a;
+}
+
+a:hover, a:active {
+    outline: 0;
+}
+
+
+h1 {
+    font-size: 50px;
+    padding-top: 20px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #39b54a;
+}
+/* BLINKING COLORS*/
+
+a {
+    animation-duration: 2500ms;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    -webkit-animation:blink 1000ms infinite; /* Safari and Chrome */
+}
+@keyframes blink {
+    from {
+        color:blue;
+    }
+    to {
+        color:red;
+    }
+}
+@-webkit-keyframes blink {
+    from {
+        color:blue;
+    }
+    to {
+        color:red;
+    }
+}
+
+ 
+
+/* ------------------------------------------------------------------- 
+ * ## Lists
+ * ------------------------------------------------------------------- */
+ol {
+    list-style: decimal;
+}
+
+ul {
+    list-style: disc;}
+
+li {
+    display: list-item;
+}
+
+ol, ul {
+    margin-left: 1.7rem;
+}
+
+ul li {
+    padding-left: .4rem;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+    margin: .6rem 0 .6rem 1.7rem;
+}
+
+ul.disc li {
+    display: list-item;
+    list-style: none;
+    padding: 0 0 0 .8rem;
+    position: relative;
+    text-align: left;
+    margin-left: -50px;
+}
+
+ul.disc li::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #39b54a;
+    position: absolute;
+    left: -17px;
+    top: 11px;
+    vertical-align: middle;
+}
+
+dt {
+    margin: 0;
+    color: #39b54a;
+}
+
+dd {
+    margin: 0 0 0 2rem;
+}

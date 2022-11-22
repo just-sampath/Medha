@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=
+        "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+    <title>REGISTRATION 2K22(projecct)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="sec">    
+    <div class="box">
+        <form>
+            <h1>PROJECTEXPO</h1>
+            <div id="drop-down" name="drop-down">
+                <label for="">College </label> <br> <br>
+                <select class="select" name="COLLEGE" id="travel" onchange="showcollege()">
+                   <option value="-" disabled selected>-------select-------</option>
+                   <option value="GIET(A)" >GIET(A)</option>
+                   <option value="GIET(JNTUK)" >GIET(JNTUK)</option>
+                   <option value="GIET PHARMACY" >GIET PHARMACY</option>
+                   <option value="GIET DIPLOMA" >GIET DIPLOMA</option>
+                   <option value="GIET DEGREE" >GIET DEGREE</option>
+                   <option value="OTHERS" > OTHERS</option>
+                </select> <br> <br>
+            </div>
+            <div id="hidden-panel">
+                <label for="">Enter College </label>
+                <input type="text" name="COLLEGE_NAME" placeholder="Enter your College"/>
+            </div>    
+
+            <div>
+                <label>Branch</label> <br> <br> 
+                <select class="select" name="BRANCH" id="branch" onchange="showbranch()">
+                    <option value="-" disabled selected>----------select Branch---------</option>
+                    <option value="CSE">Computer Science and Engineering</option>
+                    <option value="CSM">Computer Science and Engineering (AI)</option>
+                    <option value="CSC">Computer Science and Engineering (CS)</option>
+                    <option value="MECH">Mechanical Engineering</option>
+                    <option value="CIVIL">Civil Engineering</option>
+                    <option value="EEE">Electrical and Electronics Engineering</option>
+                    <option value="AME">Automobile Engineering</option>
+                    <option value="PET">Petroleum</option>
+                    <option value="ME">Mining</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MCA">M.C.A</option>
+                    <option value="MBA">M.B.A</option>
+                    <option value="PHARMACY">Pharmacy</option>
+                    <option value="OTHERS">others</option>    
+                </select> <br> <br>
+            </div>
+            <div id="hidden">
+                <label for="country">Enter Branch </label>
+                <input type="text" name="BRANCH_NAME" placeholder="Enter Your Branch"/>
+            </div>
+            <div id="drop-down" name="YEAR">
+                <label for="Year">Year</label>
+                <select class="select" name="YEAR" id="year">
+                   <option value="0" disabled selected>-------select-------</option>
+                   <option value="1" >1st year</option>
+                   <option value="2" >2nd year</option>
+                   <option value="3" >3rd year</option>
+                   <option value="4" >4th year</option>
+                </select> <br> <br>
+            </div>
+            <div>
+                <label>Email Id</label>
+              <input type="email" name="EMAIL" placeholder="Enter your Email-id" />
+            </div>
+            <div >
+                <label for="tel">Phone Number</label>
+                <input type="number" name="PHONE" placeholder="Enter your phone no." >
+            </div> <br>
+            <div>
+                <label>No  Of  Participants </label> <br> <br>
+                <label>
+                    <input type="radio" name="NO_OF_PAR" 
+                          value="1" onclick="p1();"> 1</label>
+                <label>
+                    <input type="radio" name="NO_OF_PAR" 
+                           value="2" onclick="p2();"> 2</label>
+
+                <label>
+                    <input type="radio" name="NO_OF_PAR" 
+                            value="3" onclick="p3();"> 3</label>
+                <label>
+                    <input type="radio" name="NO_OF_PAR" 
+                            value="4" onclick="p4();"> 4</label>  
+
+            </div>
+            <div id="p1name" class="p1na">
+                <label id="l1n">Team  Leader</label>
+                <input type="text" name="TEAM_LD_NAME" placeholder="Team Leader name" /><br>
+                <label id="l1i">PIN</label>
+                <input type="text" placeholder="Team Leader PIN" name="TEAM_LD_PIN"/><br>
+            </div>
+            <div id="p2name" class="p2na">
+                <label id="l2n">Member1</label>
+                <input type="text" placeholder="Member1 name" name="MEM_1_NAME"/><br>
+                <label id="l2i">PIN</label>
+                <input type="text" placeholder="Member PIN" name="MEM_1_PIN"/><br>
+            </div>
+            <div id="p3name" class="p3na">
+                <label id="l2n">Member2</label>
+                <input type="text" placeholder="Member2 name" name="MEM_2_NAME"/><br>
+                <label id="l2i">PIN</label>
+                <input type="text" placeholder="Member PIN" name="MEM_2_PIN"/><br>
+            </div>  
+            <div id="p4name" class="p4na">
+                <label id="l2n">Member3</label>
+                <input type="text" placeholder="Member3 name" name="MEM_3_NAME"/><br>
+                <label id="l2i">PIN</label>
+                <input type="text" placeholder="Member PIN" name="MEM_3_PIN"/><br>
+            </div>
+              <br>
+
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn" id="sub">Register</button>
+            </div><br>
+            <script>
+                let form = document.querySelector("form");
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    document.querySelector("#sub").value = "Submiting..";
+                    let data = new FormData(form);
+                    document.getElementById("sub").disabled=true;
+                    fetch('https://script.google.com/macros/s/AKfycbzBnTt-pmne34AXl0Q-X0kKy4bLVYixwXuuldIyFhzVlfDh2nL48plmXndD7DTW6B0h5A/exec', {
+                            method: "POST",
+                            body: data
+                        })
+                        .then(res => res.text())
+                        .then(data => {
+                            window.alert("REGISTRATION SUCESSFUL")
+                        });
+                })
+            </script>
+        </form>
+    </div>
+    <script src="myjs.js"></script>
+</section>    
+</body>
+</html>
