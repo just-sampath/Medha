@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ROBO RACE</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src=
+        "https://code.jquery.com/jquery-1.12.4.min.js">
+    </script>
+   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+           
+
+    <style>
+        body {
+            
+  background-image: url(img/bg2.jpg);
+  text-align: center;
+  font-family: "montserrat-medium", sans-serif;
+            }
+
+    </style>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.png " type="image/x-icon">
+</head>
+<body>
+    
+    <section class="sec">    
+        <div class="box">
+
+            <form>
+            <div class="head" >
+        <img src="img/logo.png"  >
+    </div>   
+                <h1>ROBO RACING</h1>
+                <div  id="drop-down" name="drop-down">
+                    <label for=""> College*  </label> <br>
+                    <select class="select" name="COLLEGE" id="travel" onchange="showcollege()" required>
+                       <option value="-" disabled selected>-------Select-------</option>
+                       <option value="GIET(A)" >GIET(A) COLLEGE</option>
+                       <option value="GIET(JNTUK)" >GIET(JNTUK)</option>
+                       <option value="GIET PHARMACY" >GIET PHARMACY</option>
+                       <option value="GIET DIPLOMA" >GIET DIPLOMA COLLEGE</option>
+                       <option value="GIET DEGREE" >GIET DEGREE COLLEGE</option>
+                       <option value="GIET POLYTECHNIC">GIET POLYTECHNIC COLLEGE</option>
+                       <option value="OTHERS" > OTHERS</option>
+                    </select> 
+                </div> <br>
+                <div id="hidden-panel">
+                    <label for="">Enter College*</label>
+                    <input type="text" name="COLLEGE_NAME" placeholder="Enter your College"/>
+                </div>    
+    <br>
+                <div>
+                    <label>Branch*</label>  
+                    <select class="select" name="BRANCH" id="branch" onchange="showbranch()" required>
+                        <option value="-" disabled selected>----------Select---------</option>
+                        <option value="CSE">Computer Science and Engineering</option>
+                        <option value="CSM">Computer Science and Engineering (AI&ML)</option>
+                        <option value="CSC">Computer Science and Engineering (CS)</option>
+                        <option value="ECE">Electronics and Communication Engineering</option>
+                        <option value="EEE">Electrical and Electronics Engineering</option>
+                        <option value="MECH">Mechanical Engineering</option>
+                        <option value="CIVIL">Civil Engineering</option>
+                        <option value="AME">Automobile Engineering</option>
+                        <option value="PET">Petroleum Engineering</option>
+                        <option value="ME">Mining Engineering</option>
+                        <option value="MCA">Master of Computer Application</option>
+                        <option value="MBA">Master of Business Administration</option>
+                        <option value="OTHERS" >OTHERS</option>
+                    </select> 
+                </div> <br>
+              <br>  <div id="hidden"> 
+                    <label for="country">Enter Branch*</label>
+                    <input type="text" name="BRANCH_NAME" placeholder="Enter Your Branch"/>
+                </div>
+               <br>
+                <div id="drop-down" name="YEAR">
+                    <label for="Year">Year*</label>
+                    <select class="select" name="YEAR" id="year" required>
+                       <option value="0" disabled selected>-------Select-------</option>
+                       <option value="1" >1st Year</option>
+                       <option value="2" >2nd Year</option>
+                       <option value="3" >3rd Year</option>
+                       <option value="4" >4th Year</option>
+                    </select> 
+                </div>
+                <div>
+                <br>    <label>Email*</label>
+                  <input type="email" name="EMAIL" placeholder="Enter your Mail" required/>
+                </div>
+                <div > <br>
+                <br>    <label for="tel">Phone Number*</label><br>
+                    <input type="tel" name="PHONE" minlength=10 maxlength=10 pattern="[6789][0-9]{9}" placeholder="Enter your Mobile Number" required>
+                </div> <br> <br>
+                <div>
+                    <label>No  of  Participants </label> <br> <br>
+                    <label>
+                        <input type="radio" name="NO_OF_PAR" 
+                              value="1" onclick="p1();"> 1</label>
+                    <label>
+                        <input type="radio" name="NO_OF_PAR" 
+                               value="2" onclick="p2();"> 2</label>
+                    <label>
+                        <input type="radio" name="NO_OF_PAR" 
+                                value="3" onclick="p3();"> 3</label>
+                  </div> <br>
+                <div id="p1name" class="p1na"> 
+                    <label id="l1n">Team  Leader</label>
+                    <input type="text" name="TEAM_LD_NAME" placeholder="Enter Team Leader Name" required/><br>
+                    <label id="l1i">Pin</label>
+                    <input type="text" minlength=10 maxlength=10 placeholder="Enter Team Leader Pin" name="TEAM_LD_PIN" required/><br>
+                    </div>
+                    <div id="p2name" class="p2na"> <br>
+                 <br>  <label id="l2n">Member1</label>
+                    <input type="text" placeholder="Enter Member1 Name" name="MEM_1_NAME"/><br>
+                    <label id="l2i">Pin </label>
+                    <input type="text" minlength=10 maxlength=10 placeholder="Enter Member1 Pin" name="MEM_1_PIN"/><br>
+                    </div><br> <br>
+                    <div id="p3name" class="p3na">
+                        <label id="l3n" >Member2</label>
+                        <input type="text" placeholder="Enter Member2 Name" name="MEM_2_NAME" required/><br>
+                        <label id="l3i">Pin</label>
+                        <input type="text" minlength=10 maxlength=10 placeholder="Enter Member2 Pin" name="MEM_2_PIN"/>
+                    </div><br>               
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn" id="sub"> <strong> REGISTER</strong></button>
+                      </div><br>
+                      <script>
+                    let form = document.querySelector("form");
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        document.querySelector("#sub").value = "Submiting..";
+                        let data = new FormData(form);
+                        document.getElementById("sub").disabled=true;
+                        fetch('https://script.google.com/macros/s/AKfycbzYXMj-gtoT1D_zKss5KLNBX4PSuelA_M6GKEai0dpveN6RfYa2tCK-gtC8EMVfIuu-Vw/exec', {
+                                method: "POST",
+                                body: data
+                            })
+                            .then(res => res.text())
+                            .then(data => {
+                             //   window.alert("REGISTRATION SUCCESSFUL")
+                            window.location.href="THANK YOU.html";
+                            });
+                    })
+                </script>
+            </form>
+        </div>
+        <script src="myjs.js"></script>
+    </section>    
+</body>
+</html>
